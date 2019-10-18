@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import './pages/home_pages.dart';
+import './pages/contador_page.dart';
 
 //Widget
 class MyApp extends StatelessWidget {
   @override
   Widget build(context) {
     return MaterialApp(
-      home: Center(child: HomePage()),
+      debugShowCheckedModeBanner: false,
+      home: Center(child: ContadorPage()),
     );
   }
 }
