@@ -6,7 +6,8 @@ class ContadorPage extends StatefulWidget {
 }
 
 class _ContadorPageState extends State<ContadorPage> {
-  final _estiloTexto = new TextStyle(fontSize: 25);
+  final _estiloTexto =
+      new TextStyle(fontSize: 25, color: Color.fromRGBO(11, 48, 104, 1.0));
 
   int _conteo = 0;
 
@@ -17,8 +18,10 @@ class _ContadorPageState extends State<ContadorPage> {
         appBar: AppBar(
           title: Text('STATE'),
           centerTitle: true,
+          backgroundColor: Color.fromRGBO(45, 45, 45, 1.0),
           elevation: 0,
         ),
+        backgroundColor: Color.fromRGBO(223, 223, 223, 1.0),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -44,6 +47,7 @@ class _ContadorPageState extends State<ContadorPage> {
       ),
       FloatingActionButton(
         child: Icon(Icons.exposure_zero),
+        backgroundColor: Color.fromRGBO(45, 45, 45, 1.0),
         onPressed: _reset,
       ),
       Expanded(
@@ -51,6 +55,7 @@ class _ContadorPageState extends State<ContadorPage> {
       ),
       FloatingActionButton(
         child: Icon(Icons.remove),
+        backgroundColor: Color.fromRGBO(45, 45, 45, 1.0),
         onPressed: _sustraer,
       ),
       SizedBox(
@@ -58,6 +63,7 @@ class _ContadorPageState extends State<ContadorPage> {
       ),
       FloatingActionButton(
         child: Icon(Icons.add),
+        backgroundColor: Color.fromRGBO(45, 45, 45, 1.0),
         onPressed: _agregar,
       ),
     ]);
@@ -68,7 +74,12 @@ class _ContadorPageState extends State<ContadorPage> {
   }
 
   void _sustraer() {
-    setState(() => _conteo--);
+    if (_conteo >= 0) {
+      setState(() => _conteo--);
+    }
+    {
+      null;
+    }
   }
 
   void _reset() {
